@@ -6,6 +6,17 @@ import ShanbayOauth from './lib/shanbay_oauth2'
 const { CLEAR_SHANBAY_TOKEN, SEARCH_WORD, OPEN_NEW_TAB, ADD_WORD_SHANBAY } = EVENTS
 let oauth = null
 
+// Service worker installation
+chrome.runtime.onInstalled.addListener(() => {
+  // 可以在这里执行初始化逻辑
+  console.log('Extension installed or updated')
+})
+
+// Service worker activation
+chrome.runtime.onStartup.addListener(() => {
+  console.log('Extension started')
+})
+
 async function getWordExplain(body) {
   const explain = parse(body)
 
@@ -144,4 +155,5 @@ function init() {
   })
 }
 
+// 初始化service worker
 init()
