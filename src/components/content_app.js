@@ -22,6 +22,17 @@ const styles = {
     overflow: 'auto',
     backgroundColor: '#fff',
   },
+  closeBtn: {
+    position: 'absolute',
+    top: '5px',
+    right: '10px',
+    cursor: 'pointer',
+    fontSize: '16px',
+    color: colorMuted,
+    backgroundColor: 'transparent',
+    border: 'none',
+    padding: '0',
+  },
 }
 
 function getOffsets() {
@@ -84,6 +95,7 @@ class ContentApp extends Component {
     const { content } = props
 
     this.search = this.search.bind(this)
+    this.closePopup = this.closePopup.bind(this)
 
     this.state = {
       containerHeight: MAX_HEIGHT,
@@ -92,6 +104,10 @@ class ContentApp extends Component {
       explain: null,
       currentWord: content,
     }
+  }
+
+  closePopup() {
+    this.props.hide()
   }
 
   componentDidMount() {
@@ -168,6 +184,13 @@ class ContentApp extends Component {
       <div
         style={containerStyle}
       >
+        <button
+          style={styles.closeBtn}
+          onClick={this.closePopup}
+          title="关闭"
+        >
+          ×
+        </button>
         {isLoading ? (
           <div>正在加载 &quot;{currentWord}&quot; ...</div>
         ) : (

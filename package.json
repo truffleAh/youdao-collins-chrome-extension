@@ -1,5 +1,5 @@
 {
-  "name": "youdao-collins-chrome-extension",
+  "name": "youdao-collins-chrome-extension-pro",
   "version": "1.2.2",
   "description": "A chrome extension to help you search english words in collins dict.",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "collins",
     "dictionary"
   ],
-  "author": "oyyd <oyydoibh@gmail.com>",
+  "author": "<wulian404@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.24.0",
