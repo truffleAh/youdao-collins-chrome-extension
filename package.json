@@ -4,9 +4,9 @@
   "description": "A chrome extension to help you search english words in collins dict.",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build && cp -r assets build && node configs/build/cp_assets.js && webpack --config ./configs/build/webpack.prod.js && zip -r -X build.zip build",
-    "dev": "rm -rf build && cp -r assets build && webpack -w --config ./configs/build/webpack.dev.js",
-    "dev:static": "rm -rf dev && mkdir dev && cp assets/dev.html dev/index.html && cp -r assets/fonts dev/fonts && webpack -w --config ./configs/build/webpack.dev.js & http-server dev",
+    "build": "rd /s /q build 2>nul || true && mkdir build && xcopy /s /i /y assets build && node configs/build/cp_assets.js && webpack --config ./configs/build/webpack.prod.js",
+    "dev": "rd /s /q build 2>nul || true && mkdir build && xcopy /s /i /y assets build && webpack -w --config ./configs/build/webpack.dev.js",
+    "dev:static": "rd /s /q dev 2>nul || true && mkdir dev && xcopy /y assets/dev.html dev\\ && xcopy /s /i /y assets/fonts dev\\fonts && webpack -w --config ./configs/build/webpack.dev.js & http-server dev",
     "flow": "flow check",
     "test": "jest",
     "test:watch": "jest --watch"
