@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Compress-Archive -Path * -DestinationPath ../build.zip -Force)"
+    ]
+  }
+}

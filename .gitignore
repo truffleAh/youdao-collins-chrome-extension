@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+WORK.md
+/build
+dev
+npm-debug.log
+configs/crx.pem
+build.crx
+build.zip
+.history
+.package-lock.json
